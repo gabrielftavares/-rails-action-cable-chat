@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+seed_files = %w(
+  chatrooms
+)
+
+seed_files.each do |seed_file|
+  puts "** Seed: #{seed_file} **"
+  require Rails.root.join("db", "seeds", "#{seed_file}.rb")
+end
